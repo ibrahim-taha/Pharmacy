@@ -9,7 +9,7 @@ body {
   background: #f5f7fb;
 }
 
-/*  Navbar  */
+/*   Navbar  */
 .navbar {
   max-width: 1300px;
   margin: 0px 60px;
@@ -116,6 +116,49 @@ body {
   background: #e0e7ff;
   color: #2563eb;
 }
+/* --- الشاشات الكبيرة جداً  --- */
+@media (min-width: 1400px) {
+  .navbar {
+    margin: 20px auto; 
+  }
+}
+
+/* --- الشاشات الصغيرة (الجوال - أقل من 768px) --- */
+@media (max-width: 768px) {
+  .navbar {
+    margin: 10px; 
+    padding: 10px 15px;
+    gap: 10px;
+    flex-wrap: wrap; 
+  }
+
+  .nav-links {
+    display: none; 
+  }
+
+  .logo span {
+    font-size: 16px; 
+  }
+
+  .btn-outline {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
+
+/* --- الشاشات المتوسطة (Tablets) --- */
+@media (max-width: 1024px) {
+  .navbar {
+    margin: 10px 20px;
+  }
+  
+  .nav-links li a {
+    padding: 10px 12px; 
+  }
+}
+
+
+/*  Navbar  */
 
 /*  Hero  */
 .hero {
@@ -201,24 +244,71 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
+/* --- الشاشات الكبيرة   --- */
+@media (min-width: 1400px) {
+    .hero {
+        max-width: 1300px;
+        margin: 0 auto; 
+    }
+}
 
-/*  Issues  */
+/* --- الشاشات الصغيرة الجوال  --- */
+@media (max-width: 768px) {
+    .hero {
+        margin: 10px; 
+        padding: 20px; 
+        height: auto; 
+        min-height: 350px;
+        padding-left: 20px; 
+    }
+
+    .hero-overlay {
+        position: relative; 
+        inset: 0;
+        margin-bottom: 20px;
+    }
+
+    .hero-overlay h1 {
+        font-size: clamp(2.5rem, 10vw, 5rem); 
+        line-height: 1.2;
+    }
+
+    .hero-info {
+        flex-direction: column; 
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .hero-info p {
+        max-width: 100%; 
+        margin-bottom: 15px;
+        font-size: 14px;
+    }
+
+    .actions {
+        margin-bottom: 10px;
+        justify-content: center; 
+    }
+}
+/* end Hero  */
+
+/*  start Issues  */
 
 .issues {
   background: #f2f5f9;
-  padding: 30px;
   border-radius: 30px;
   max-width: 1300px;
-  margin: 20px 60px;
+  margin: 20px auto; 
   padding: 60px 30px;
   position: relative;
   top: -50px;
 }
 
-/* ===== Cards ===== */
 .cards {
   display: flex;
   gap: 20px;
+  justify-content: center; 
 }
 
 .card {
@@ -226,10 +316,11 @@ body {
   padding: 24px;
   position: relative;
   height: 362px;
-  width: 307px;
+  width: 307px; 
   transition: transform 0.3s ease;
   cursor: pointer;
 }
+
 .card:hover {
   transform: translateY(-15px) scale(1.1);
 }
@@ -304,11 +395,60 @@ body {
   background: #2563eb;
 }
 
-/*  Solutions  */
+/* . الشاشات الكبيرة جداً  --- */
+@media (min-width: 1400px) {
+  .issues {
+    max-width: 1400px;
+    margin: 20px auto;
+  }
+  .card {
+    width: 320px; 
+  }
+}
 
+/* ---  الشاشات الصغيرة  --- */
+@media (max-width: 768px) {
+  .issues {
+    margin: 10px;
+    padding: 30px 15px;
+    top: 0; 
+    border-radius: 20px;
+  }
+
+  .cards {
+    flex-direction: column; 
+    align-items: center;
+    gap: 15px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 350px; 
+    height: auto; 
+    min-height: 250px;
+    padding: 20px;
+  }
+
+  .card:hover {
+    transform: translateY(-5px); 
+  }
+
+  .card .img {
+    font-size: 32px; 
+    bottom: 15px;
+  }
+
+  .pagination {
+    justify-content: center; 
+    margin-top: 20px;
+  }
+}
+/*  end Issues  */
+
+/* start Solutions  */
 .solutions {
   max-width: 1200px;
-  margin: 0px 60px;
+  margin: 0 auto; 
   padding: 14px 22px;
   position: relative;
   top: -50px;
@@ -320,6 +460,7 @@ body {
   display: flex;
   gap: 40px;
   align-items: center;
+  padding: 30px; 
 }
 
 /* ===== Image ===== */
@@ -387,10 +528,64 @@ body {
   background: #1e40af;
   transform: scale(1.1);
 }
+/* --- 1. الشاشات الكبيرة جداً  --- */
+@media (min-width: 1400px) {
+  .solutions {
+    max-width: 1300px;
+  }
+  .solutions-content h2 {
+    font-size: 32px; 
+  }
+}
+
+/* --- 2. الشاشات الصغيرة  --- */
+@media (max-width: 768px) {
+  .solutions {
+    margin: 10px; 
+    top: 0; 
+    padding: 0;
+  }
+
+  .solutions-box {
+    flex-direction: column; 
+    gap: 20px;
+    padding: 20px;
+    text-align: center; 
+  }
+
+  .solutions-image, 
+  .solutions-content {
+    flex: unset; 
+    width: 100%; 
+  }
+
+  /* ترتيب العناصر: جعل الصورة تظهر أولاً ثم النص */
+  .solutions-image {
+    order: 1;
+  }
+  .solutions-content {
+    order: 2;
+  }
+
+  .solutions-content h2 {
+    font-size: 22px;
+  }
+
+  .solutions-content p {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .tag {
+    font-size: 15px; 
+  }
+}
+
+/* ===== end  ===== */
 
 .container {
   max-width: 1300px;
-  margin: 0px 60px;
+  margin: 0px auto;
   padding: 14px 22px;
 }
 
@@ -428,6 +623,12 @@ body {
   justify-content: center;
   flex: 1;
 }
+.practice-box img {
+  width: 70%;
+  mix-blend-mode: multiply; 
+  opacity:.6;
+}
+
 
 .how-it-works-box {
   background: #7ee8d4;
@@ -546,25 +747,79 @@ body {
   line-height: 1.7;
 }
 
-@media (max-width: 850px) {
-  .content-wrapper {
-    grid-template-columns: 1fr;
-  }
+/* --- 1. الشاشات الكبيرة جداً (Extra Large Screens) --- */
+@media (min-width: 1400px) {
+    .content-wrapper {
+        gap: 50px; /* زيادة المسافة بين القسمين في الشاشات الضخمة */
+    }
 }
 
-@media (max-width: 500px) {
-  .left-section {
-    flex-direction: column;
-  }
-  .accordion-content {
-    padding: 0 20px 20px 20px;
-  }
-  .header h1 {
-    font-size: 1.8rem;
-  }
+/* --- 2. الشاشات الصغيرة  --- */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px; 
+        padding: 10px;
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .content-wrapper {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+
+    .left-section {
+        flex-direction: row; 
+        flex-wrap: wrap;
+    }
+
+    .practice-box, .how-it-works-box {
+        flex: 1 1 100%; 
+        padding: 40px 20px; 
+        border-radius: 25px;
+    }
+
+    .how-it-works-box h3 {
+        font-size: 1.5rem;
+    }
+
+    .right-section {
+        padding: 15px;
+        border-radius: 25px;
+    }
+
+    .accordion-header {
+        padding: 15px 5px;
+    }
+
+    .step-number {
+        width: 40px;
+        height: 40px;
+        margin-left: 10px;
+        font-size: 1rem;
+        border-radius: 12px;
+    }
+
+    .step-text {
+        font-size: 1rem;
+    }
+
+
+    .accordion-content {
+        padding: 0 15px 20px 50px; 
+    }
+
+    .accordion-content p {
+        font-size: 0.9rem;
+    }
 }
 
-/* cont */
+
+/* end Solutions  */
+
+/* start cont */
 
 .cont {
   max-width: 1300px;
